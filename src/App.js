@@ -14,7 +14,6 @@ function App() {
     new Date(date.getTime() + date.getTimezoneOffset()*60*1000);
     return date;
   }
-
   let chartHumData = [
     ['Aika', '%'],
     ['Please wait...', 0]
@@ -23,25 +22,19 @@ function App() {
     ['Aika', 'Asteet'],
     ['Please wait...', 0]
   ];
-
   fetch('https://iot-opettaja.azurewebsites.net/api/HttpTriggerCSharp2?code=mDniSJtbOvdFMvOqapzzY506azTIbraWxtejgzhX8Ti4sY2p/kjoDg==&deviceId=1f0038001847393035313138&amount=10')
     .then(response => response.json())
     .then(json => setWeather([...json]));
-
   let humtempkey = 1;
-  
   const rows = () => weather.map(temphum => { //loopataan läpi uusimmat 10kpl (amount=10) mittaustuloksia
-
     if(chartHumData[1][0] === 'Please wait...'){
       chartHumData.pop();
     }
     if(chartTempData[1][0] === 'Please wait...'){
       chartTempData.pop();
     }
-
     chartHumData.push([String(convertUTCDateToLocalDate(new Date(temphum.Timestamp))).split(' ')[4], parseInt(temphum.Hum)])
     chartTempData.push([String(convertUTCDateToLocalDate(new Date(temphum.Timestamp))).split(' ')[4], parseInt(temphum.Temp)])
-
     return <div key={humtempkey++}>
       <b>Klo:</b> {String(convertUTCDateToLocalDate(new Date(temphum.Timestamp))).split(' ')[4]} &nbsp;
       <b>Ilmankosteus:</b> {temphum.Hum} % &nbsp;
@@ -53,38 +46,19 @@ function App() {
       <div className="App">
       <Header />
       <Switch>
-         <Route path="/portfolio">
+        <Route path="/portfolio">
             <Portfolio />
         </Route>
         <Route path="/">
-          {rows()}
-          <div>
-            <Chart
-              width={'100%'}
-              height={300}
-              chartType="ColumnChart"
-              loader={<div>Loading Chart</div>}
-              data={chartHumData}
-              options={{
-                title: 'Ilmankosteus',
-                chartArea: { width: '50%' },
-                vAxis: { minValue: 0 }, 
-              }}
-            />
-          </div>
-          <div>
-            <Chart
-              width={'100%'}
-              height={300}
-              chartType="LineChart"
-              loader={<div>Loading Chart</div>}
-              data={chartTempData}
-              options={{
-                title: 'Lämpötila',
-                chartArea: { width: '50%' },
-                vAxis: { minValue: 0 },
-              }}
-            />
+          <div className="chartDiv">
+            {rows()}
+            <div>
+              <Chart width={'100%'} height={300} chartType="ColumnChart" loader={<div>Loading Chart</div>} data={chartHumData} options={{title: 'Ilmankosteus', chartArea: { width: '50%' }, vAxis: { minValue: 0 }}} />
+            </div>
+            <div>
+              <Chart width={'100%'} height={300} chartType="LineChart" loader={<div>Loading Chart</div>} data={chartTempData} options={{title: 'Lämpötila', chartArea: { width: '50%' }, vAxis: { minValue: 0 }}} />
+              <a href="https://github.com/MiraAVorne/HyTeIoT/blob/master/README.md" target="_BLANK" rel="noopener noreferrer">Projektin README</a>
+            </div> 
           </div>
         </Route>
       </Switch>

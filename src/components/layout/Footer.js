@@ -14,6 +14,8 @@ const footerStyle = {
   textAlign: 'center',
   position: 'fixed',
   bottom: '0px',
-  width: '100%'
+  width: '100%',
+  height: '5px',
+  paddingBottom: '20px'
 }
 export default Footer;

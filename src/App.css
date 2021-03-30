@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+.portfolioDiv{
+  background-color:lightblue;
+}
+.chartDiv{
+  padding:30px;
+}
 .ChartHum{
   
   border:solid black 1px;
