@@ -38,7 +38,7 @@ function App() {
     return <div key={humtempkey++}>
       <b>Klo:</b> {String(convertUTCDateToLocalDate(new Date(temphum.Timestamp))).split(' ')[4]} &nbsp;
       <b>Ilmankosteus:</b> {temphum.Hum} % &nbsp;
-      <b>Lämpötila:</b> {temphum.Temp} °C 
+      <b>Lämpötila:</b> {temphum.Temp} °C &nbsp;
       <b>Kastepiste:</b> {temphum.DP} °C 
     </div>
   }) 
