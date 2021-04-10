@@ -19,7 +19,7 @@ function App() {
     ['Please wait...', 0]
   ];
   let chartTempData = [
-    ['Aika', 'Asteet'],
+    ['Aika', '°C'],
     ['Please wait...', 0]
   ];
   fetch('https://iot-opettaja.azurewebsites.net/api/HttpTriggerCSharp2?code=mDniSJtbOvdFMvOqapzzY506azTIbraWxtejgzhX8Ti4sY2p/kjoDg==&deviceId=1f0038001847393035313138&amount=10')
