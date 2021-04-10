@@ -58,7 +58,7 @@ function App() {
             </div>
             <div>
               <Chart width={'100%'} height={300} chartType="LineChart" loader={<div>Loading Chart</div>} data={chartTempData} options={{title: 'Lämpötila', chartArea: { width: '50%' }, vAxis: { minValue: 0 }}} />
-              <a href="https://github.com/MiraAVorne/HyTeIoT/blob/master/README.md" target="_BLANK" rel="noopener noreferrer">Projektin README</a>
+              <a href="https://github.com/MiraAVorne/HyTeIoT" target="_BLANK" rel="noopener noreferrer">Projektin GitHub</a>
             </div> 
           </div>
         </Route>

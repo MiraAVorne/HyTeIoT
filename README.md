@@ -1,17 +1,5 @@
-# IoT
+# Sääasema
+Tämä käyttöliittymä on Mira Vornen Koulutuskeskus Salpauksen hyvinvointiteknologian virassa suunnittelema ja toteuttama projekti hyvinvointiteknologian opiskelijoille.
 
-## Mikä IoT?
-
-
-## Sääasemajärjestelmän toimintakaavio
-### Sääaseman rakenne
-
-### Laitteistot
-### Komponentit
-### Palvelut
-### Ohjelmointi
-### Toiminta
-## Käytetyt kehitysympäristöt
-## Termihakemisto
-## Viitteet
-
+## Sääaseman rakenne
+![Sääaseman rakenne](/IoTEsittely.png)
