@@ -26,7 +26,7 @@ function App() {
     .then(response => response.json())
     .then(json => setWeather([...json]));
   let humtempkey = 1;
-  const rows = () => weather.map(temphum => { //loopataan läpi uusimmat 10kpl (amount=10) mittaustuloksia
+  const rows = () => weather.reverse().map(temphum => { //loopataan läpi uusimmat 10kpl (amount=10) mittaustuloksia
     if(chartHumData[1][0] === 'Please wait...'){
       chartHumData.pop();
     }
